@@ -1,29 +1,29 @@
-#include<iostream>					
+#include<iostream>
 using namespace std;
 int main() {
-	int num[10];
-	int index, search;
-	bool flag = false;
+	int num[3][3];
+	int row, col;
 	//INPUT FOR ARRAY
-	for(int i = 0; i < 10; i++) {
-		cout << "Enter a number: ";
-		cin >> num[i];
-	}
-	//SEQUENTIAL SEARCH
-	cout << "Enter value to search: ";
-	cin >> search;
-	for(int i = 0; i < 10; i++) {
-		if (search == num[i]) {
-			index = i;	
-			flag = true;
-			break;
+	for(int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << "Enter a number: ";
+			cin >> num[i][j];
 		}
 	}
-
+	
 	//OUTPUT
-	if (flag)
-		cout << "Value " << search << " is at index " << index << endl;
-	else
-		cout << "Value not found!" << endl;
+	for(int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++){
+			cout << num[i][j] << " ";
+		}
+		cout << endl;
+	}
+	
+	cout << "Enter row value: ";
+	cin >> row;
+	cout << "Enter column value: ";
+	cin >> col;
+	
+	cout << "Value is " << num[row-1][col-1] << endl;
 	system("pause");
 }
